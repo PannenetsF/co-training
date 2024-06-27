@@ -970,6 +970,7 @@ class DebertaModel(DebertaPreTrainedModel):
         encoder_outputs = checkpoint(self.encoder, 
             embedding_output,
             attention_mask,
+            use_reentrant=True,
         )
         encoded_layers = encoder_outputs[1]
 
